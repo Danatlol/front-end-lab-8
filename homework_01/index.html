@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>hw</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="main">
+            <div id="container">
+                <div id="content" role="main">
+
+                    <!--Header-->
+                    <header id="header">
+                        <img src="EPAM_logo.svg" alt="picture not found">
+                    </header>
+
+                    <!--Navigation-->
+                    <nav>
+                        <a href="#html"><b>HTML</b></a>
+                        <a href="#list"><b>List</b></a>
+                        <a href="#table"><b>Table</b></a>
+                        <a href="#text_formats"><b>Text formats</b></a>
+                        <a href="#blockquotes"><b>Blockquotes</b></a>
+                    </nav>
+                    <hr>
+                    <h1 id="html"><b>HTML Elements</b></h1>
+                    <hr>
+
+                    <h2 id="list">Ordered List</h2>
+
+                    <ul>
+                        <li>
+                            <h2>Heading 1</h2>
+                            <ul>
+                                <li>
+                                    <h2>Heading 2</h2>
+                                    <ul>
+                                        <li>
+                                            <h3>Heading 3</h3>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ol>
+                        <li>
+                            <h4>Heading 4</h4>
+                            <ol>
+                                <li>
+                                    <h5>Heading 5</h5>
+                                    <ol>
+                                        <li>
+                                            <h6>Heading 6</h6>
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+
+                    <h3>Definition List</h3>
+                    <dl>
+                        <dt>defines terms 1</dt>
+                        <dd>description 1</dd>
+                        <dt>defines terms 2</dt>
+                        <dd>description 2</dd>
+                    </dl>
+
+
+                    <h2>Details</h2>
+                    <details open>
+                        <summary>Even more details open</summary>
+                        <p>Here are even more details about the details.</p>
+                    </details>
+                    <details>
+                        <summary>Even more details close</summary>
+                        <p>Here are even more details about the details.</p>
+                    </details>
+
+                    <hr>
+
+                    <h2 id="table">Table</h2>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Elements</th>
+                                <th>Elements</th>
+                                <th>Elements</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong style="text-transform:lowercase">Strong</strong></td>
+                                <td>H<sub>2</sub>O</td>
+                                <td><a href="https://www.google.com.ua/search?newwindow=1&source=hp&ei=T7VkWvGnMpOOmgXW1ogY&q=test+link&oq=test+link&gs_l=psy-ab.3..0i10k1j0j0i203k1l8.6832.8977.0.10595.10.9.0.0.0.0.177.1142.0j8.8.0....0...1c.1.64.psy-ab..2.8.1141.0..0i67k1.0.pb1LuZ9tDNs" target="_blank" style="text-transform:lowercase">Test link</a></td>
+                            </tr>
+                            <tr>
+                                <td><i>Italic</i></td>
+                                <td><u>Underline.</u></td>
+                                <td><del style="text-transform:lowercase">Delete</del></td>
+                            </tr>
+                            <tr>
+                                <td><abbr title="This is abbreviation...">Abbreviation</abbr></td>
+                                <td>5<sup>3</sup>=125</td>
+                                <td><ins style="text-transform:lowercase">Inserted</ins></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+
+                    <h2 id="text_formats">Text formats</h2>
+
+                    <h3>Article Text</h3>
+                    <article>
+                        <h2>Article title</h2>
+                        <p>Article description</p>
+                    </article>
+
+                    <h3>Preformatted Text</h3>
+
+                    <pre>Text
+  in a pre element
+    is displayed in a fixed-width
+font, and it preserves
+both           spaces and
+    line breaks
+    
+</pre>
+
+                    <h3>Code</h3>
+                    <pre><code>
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+
+</code></pre>
+                    <hr>
+
+                    <h2 id="blockquotes">Blockquotes</h2>
+                    <p>Let’s keep it simple. Italics are good to help set it off from the body text. Be sure to style the citation.</p>
+                    <blockquote>
+                        Technology is nothing. What's important is that you have a faith in people, that they're basically good and smart, and if you give them tools, they'll do wonderful things with them.
+                        <br>
+                        <a href="https://en.wikipedia.org/wiki/Steve_Jobs" target="_blank">Steve Jobs</a>
+                    </blockquote>
+
+
+                    <div hidden="hidden">And here’s a bit of trailing text.</div>
+
+                    <footer>
+                        Copyright Epam Systems
+                    </footer>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
