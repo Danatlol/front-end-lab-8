@@ -1,0 +1,14 @@
+@import "variables1";
+@import "main";
+
+body{
+    @include mBody($bodyBackgroundColor, $contentBackgroundColor, $headerColor, $fontColor, $aLinkColor, $aVisitedColor, $aHoverColor, 'false');
+}
+
+@include mBrief($briefBackgroundColor, 'true', 370px);
+
+@include mImgBorder($imgBorderColor, 3px);
+
+@include mTable($tableThBackgroundColor, $tableTdBackgroundColor, $tableBorderColor, $tableFontColor);
+
+@include mForm($formLabelColor, $btnColor, $btnBorderColor);
