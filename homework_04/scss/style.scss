@@ -36,11 +36,8 @@ body{
             display: grid;
             grid-template-columns: repeat(2, 50%);
             grid-template-rows: 17% 17% 17% 17% 32%;
-            
             background-image: url(../img/apples.jpg);
-            background-position: center center;
             background-size: contain;
-            background-repeat: no-repeat;
     
             nav{
                 grid-column: 2/3;
@@ -154,11 +151,11 @@ body{
                 padding: 0;
                 width: 45%;
                 display: inline-block;
-                font-size: 1.2rem;   //1.3vw
+                font-size: 1.2rem;
             }
 
             p:nth-child(2){
-                font-size: 0.8rem;   //0.7vw
+                font-size: 0.8rem;
             }
         }
 
@@ -169,7 +166,7 @@ body{
             h2{
                 text-align: center;
                 font-weight: 400;
-                font-size: 1.5rem;   //1.3vw
+                font-size: 1.5rem;
                 margin: 5% 0;
             }
 
@@ -210,7 +207,8 @@ body{
                         cursor: pointer;
                         user-select: none;
                         transform-origin: 100% 0;
-                        transition: background-color $normalSpeedTransition ease-in-out, color $normalSpeedTransition ease-in-out, border-color $normalSpeedTransition ease-in-out, transform $quickSpeedTransition ease-in-out;
+                        transition: background-color $normalSpeedTransition ease-in-out, color $normalSpeedTransition ease-in-out,
+                        border-color $normalSpeedTransition ease-in-out, transform $quickSpeedTransition ease-in-out;
 
                         &:hover{
                             background-color: $likeBorderColor;
@@ -255,7 +253,7 @@ body{
             justify-content: space-between;
             padding-bottom: 10%;
 
-            article{
+            aside{
                 font-size: 0.85vw;
                 color: $footColor;
 
@@ -287,7 +285,7 @@ body{
             justify-content: space-between;
             align-items: center;
             border-top: $footNavBorderWidth solid $footNavBorderColor;
-            padding: 2% 0;
+            padding: 0;
 
             small{
                 color: $footSmallColor;
@@ -298,17 +296,18 @@ body{
                 margin: 0;
                 padding: 0;
                 list-style: none;
-                width: 50%;
+                width: 70%;
                 text-align: right;
 
                 li{
                     display: inline-block;
                     margin: 0 0 0 0;
-                    padding: 3%;
+                    padding: 3% 3%;
                     font-size: 1rem;
                     font-weight: bold;
                     cursor: pointer;
                     user-select: none;
+                    transition: border-radius $quickSpeedTransition ease-in-out;
 
                     &:hover{
                         border-radius: 45%;
@@ -317,6 +316,8 @@ body{
 
                     &:active{
                         box-shadow: 0 0 4vw $footMenuActiveItemColor;
+                        color: $containerBackgroundColor;
+                        background-color: $subsrcibeSubmitBtnBackgroundColor;
                     }
                 }
             }

@@ -28,9 +28,7 @@ body {
       grid-template-columns: repeat(2, 50%);
       grid-template-rows: 17% 17% 17% 17% 32%;
       background-image: url(../img/apples.jpg);
-      background-position: center center;
-      background-size: contain;
-      background-repeat: no-repeat; }
+      background-size: contain; }
       .container .fr header nav {
         grid-column: 2/3; }
         .container .fr header nav ul {
@@ -200,46 +198,46 @@ body {
       display: flex;
       justify-content: space-between;
       padding-bottom: 10%; }
-      .container footer .footColumns article {
+      .container footer .footColumns aside {
         font-size: 0.85vw;
         color: #8E8E8E; }
-        .container footer .footColumns article h4 {
+        .container footer .footColumns aside h4 {
           font-size: 1.4vw;
           color: #000; }
-        .container footer .footColumns article:nth-child(-n+3) {
+        .container footer .footColumns aside:nth-child(-n+3) {
           margin-right: 5%;
           width: 25%; }
-        .container footer .footColumns article address {
+        .container footer .footColumns aside address {
           line-height: 2vw;
           font-style: normal; }
-        .container footer .footColumns article small {
+        .container footer .footColumns aside small {
           color: #c1c1c1; }
-        .container footer .footColumns article .subscribeInput {
+        .container footer .footColumns aside .subscribeInput {
           width: 100%; }
-          .container footer .footColumns article .subscribeInput input {
+          .container footer .footColumns aside .subscribeInput input {
             font-size: 1.1vw;
             padding: 1vw 2vw;
             box-sizing: border-box; }
-          .container footer .footColumns article .subscribeInput input[type="email"] {
+          .container footer .footColumns aside .subscribeInput input[type="email"] {
             background: #ebebeb;
             width: 58%;
             border: 1px solid #343638; }
-          .container footer .footColumns article .subscribeInput input[type="submit"] {
+          .container footer .footColumns aside .subscribeInput input[type="submit"] {
             background: #343638;
             color: #E8E8E8;
             width: 42%;
             border: 1px solid #343638;
             cursor: pointer; }
-            .container footer .footColumns article .subscribeInput input[type="submit"]:hover {
+            .container footer .footColumns aside .subscribeInput input[type="submit"]:hover {
               background-color: #4d5052; }
-            .container footer .footColumns article .subscribeInput input[type="submit"]:active {
+            .container footer .footColumns aside .subscribeInput input[type="submit"]:active {
               background-color: #1b1d1e; }
     .container footer nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       border-top: 3px solid #F3F3F3;
-      padding: 2% 0; }
+      padding: 0; }
       .container footer nav small {
         color: #A4A4A4;
         text-align: left; }
@@ -247,20 +245,23 @@ body {
         margin: 0;
         padding: 0;
         list-style: none;
-        width: 50%;
+        width: 70%;
         text-align: right; }
         .container footer nav ul li {
           display: inline-block;
           margin: 0 0 0 0;
-          padding: 3%;
+          padding: 3% 3%;
           font-size: 1rem;
           font-weight: bold;
           cursor: pointer;
-          user-select: none; }
+          user-select: none;
+          transition: border-radius 0.1s ease-in-out; }
           .container footer nav ul li:hover {
             border-radius: 45%;
             box-shadow: 0 0 4vw #000; }
           .container footer nav ul li:active {
-            box-shadow: 0 0 4vw #ff0; }
+            box-shadow: 0 0 4vw #ff0;
+            color: #fff;
+            background-color: #343638; }
 
 /*# sourceMappingURL=style.css.map */
