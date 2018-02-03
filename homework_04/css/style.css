@@ -100,98 +100,100 @@ body {
             background-color: black; }
           .container .fr header .btn-flex-con .btn:active {
             background-color: rgba(0, 0, 0, 0); }
-  .container main aside {
-    padding: 5% 10%;
-    display: flex;
-    justify-content: space-between; }
-    .container main aside p {
-      margin: 0;
-      padding: 0;
-      width: 45%;
-      display: inline-block;
-      font-size: 1.2rem; }
-    .container main aside p:nth-child(2) {
-      font-size: 0.8rem; }
-  .container main section {
-    background: #ebebeb;
-    padding: 5% 10% 10%; }
-    .container main section h2 {
-      text-align: center;
-      font-weight: 400;
-      font-size: 1.5rem;
-      margin: 5% 0; }
-    .container main section .gallery {
+  .container main {
+    background: #fff; }
+    .container main aside {
+      padding: 5% 10%;
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between; }
-      .container main section .gallery article {
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 100%;
-        margin: 2% 0;
-        position: relative; }
-        .container main section .gallery article h3 {
-          margin: 0;
-          position: absolute;
-          bottom: 1.5vw;
-          left: 1.5vw;
-          color: #F0F0F0;
-          font-weight: 400;
-          font-size: 1vw;
-          user-select: none;
-          z-index: 10; }
-        .container main section .gallery article div {
-          position: absolute;
-          top: 1vw;
-          right: 1vw;
-          z-index: 10;
-          padding: 0.5vw 1vw;
-          border: 1px solid #fff;
-          background: #505050;
-          color: #fff;
-          font-size: 1vw;
-          cursor: pointer;
-          user-select: none;
-          transform-origin: 100% 0;
-          transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, transform 0.1s ease-in-out; }
-          .container main section .gallery article div:hover {
-            background-color: #fff;
-            color: #505050;
-            border-color: #505050; }
-          .container main section .gallery article div:active {
-            transform: scale(3.5); }
-        .container main section .gallery article img {
-          height: 16vw;
-          filter: brightness(0.8); }
-    .container main section .subscribeForm {
-      padding: 6% 10%;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between; }
-      .container main section .subscribeForm label {
-        font-size: 1.5vw;
-        font-weight: 500; }
-      .container main section .subscribeForm .subscribeInput {
-        width: 60%; }
-        .container main section .subscribeForm .subscribeInput input {
-          font-size: 1.1vw;
-          padding: 1vw 2vw;
-          box-sizing: border-box; }
-        .container main section .subscribeForm .subscribeInput input[type="email"] {
-          background: #ebebeb;
-          width: 65%;
-          border: 1px solid #343638; }
-        .container main section .subscribeForm .subscribeInput input[type="submit"] {
-          background: #343638;
-          color: #E8E8E8;
-          width: 35%;
-          border: 1px solid #343638;
-          cursor: pointer; }
-          .container main section .subscribeForm .subscribeInput input[type="submit"]:hover {
-            background-color: #4d5052; }
-          .container main section .subscribeForm .subscribeInput input[type="submit"]:active {
-            background-color: #1b1d1e; }
+      .container main aside p {
+        margin: 0;
+        padding: 0;
+        width: 45%;
+        display: inline-block;
+        font-size: 1.2rem; }
+      .container main aside p:nth-child(2) {
+        font-size: 0.8rem; }
+    .container main section {
+      background: #ebebeb;
+      padding: 5% 10% 10%; }
+      .container main section h2 {
+        text-align: center;
+        font-weight: 400;
+        font-size: 1.5rem;
+        margin: 5% 0; }
+      .container main section .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; }
+        .container main section .gallery article {
+          display: grid;
+          grid-template-columns: 100%;
+          grid-template-rows: 100%;
+          margin: 2% 0;
+          position: relative; }
+          .container main section .gallery article h3 {
+            margin: 0;
+            position: absolute;
+            bottom: 1.5vw;
+            left: 1.5vw;
+            color: #F0F0F0;
+            font-weight: 400;
+            font-size: 1vw;
+            user-select: none;
+            z-index: 10; }
+          .container main section .gallery article div {
+            position: absolute;
+            top: 1vw;
+            right: 1vw;
+            z-index: 10;
+            padding: 0.5vw 1vw;
+            border: 1px solid #fff;
+            background: #505050;
+            color: #fff;
+            font-size: 1vw;
+            cursor: pointer;
+            user-select: none;
+            transform-origin: 100% 0;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, transform 0.1s ease-in-out; }
+            .container main section .gallery article div:hover {
+              background-color: #fff;
+              color: #505050;
+              border-color: #505050; }
+            .container main section .gallery article div:active {
+              transform: scale(3.5); }
+          .container main section .gallery article img {
+            height: 16vw;
+            filter: brightness(0.8); }
+      .container main section .subscribeForm {
+        padding: 6% 10%;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; }
+        .container main section .subscribeForm label {
+          font-size: 1.5vw;
+          font-weight: 500; }
+        .container main section .subscribeForm .subscribeInput {
+          width: 60%; }
+          .container main section .subscribeForm .subscribeInput input {
+            font-size: 1.1vw;
+            padding: 1vw 2vw;
+            box-sizing: border-box; }
+          .container main section .subscribeForm .subscribeInput input[type="email"] {
+            background: #fff;
+            width: 65%;
+            border: 1px solid #343638; }
+          .container main section .subscribeForm .subscribeInput input[type="submit"] {
+            background: #343638;
+            color: #E8E8E8;
+            width: 35%;
+            border: 1px solid #343638;
+            cursor: pointer; }
+            .container main section .subscribeForm .subscribeInput input[type="submit"]:hover {
+              background-color: #4d5052; }
+            .container main section .subscribeForm .subscribeInput input[type="submit"]:active {
+              background-color: #1b1d1e; }
   .container footer {
     padding: 7% 10% 0; }
     .container footer .footColumns {
@@ -219,7 +221,7 @@ body {
             padding: 1vw 2vw;
             box-sizing: border-box; }
           .container footer .footColumns aside .subscribeInput input[type="email"] {
-            background: #ebebeb;
+            background: #fff;
             width: 58%;
             border: 1px solid #343638; }
           .container footer .footColumns aside .subscribeInput input[type="submit"] {

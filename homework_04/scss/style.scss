@@ -140,6 +140,7 @@ body{
     }
     
     main{
+        background: $mainBackgroundColor;
         
         aside{
             padding: 5% 10%;
@@ -160,7 +161,7 @@ body{
         }
 
         section{
-            background: $mainBackgroundColor;
+            background: $mainSectionBackgroundColor;
             padding: 5% 10% 10%;
 
             h2{
