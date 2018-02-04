@@ -125,6 +125,7 @@ body {
       .container main section .gallery {
         display: flex;
         flex-wrap: wrap;
+        margin-bottom: 2%;
         justify-content: space-between; }
         .container main section .gallery article {
           display: grid;
