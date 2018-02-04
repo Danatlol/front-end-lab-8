@@ -7,8 +7,7 @@ body, html, div {
   width: 100%;
   background-color: #fff; }
   .container header {
-    text-align: center;
-    position: relative; }
+    text-align: center; }
     .container header h1 {
       display: none; }
     .container header img {
@@ -25,17 +24,23 @@ body, html, div {
       font-weight: bold;
       padding: 2.5% 5%;
       border-top: 1px outset #bfbfbf;
-      user-select: none; }
+      user-select: none;
+      transition: transform 0.15s ease-in-out; }
       .container header nav a:hover {
-        background-color: #cfcfcf; }
+        background-color: #cfcfcf;
+        border: none;
+        z-index: 10;
+        transform: scale(1.5);
+        background-color: #39c2d7;
+        box-shadow: 0 0 30px #39c2d7;
+        color: #fff; }
       .container header nav a:active {
-        background-color: white; }
+        transform: scale(1); }
   .container main {
     background-color: #fff; }
     .container main aside {
       overflow: hidden;
       background-image: url(../img/banner.jpg);
-      background-repeat: no-repeat;
       background-position: center;
       background-size: cover; }
       .container main aside h2 {
@@ -91,10 +96,13 @@ body, html, div {
     background-color: transparent;
     border-top: none;
     padding: 0;
-    margin: 0 2% 3%; }
+    margin: 0 2% 3%;
+    transition: initial; }
     .container header nav a:hover {
       background-color: transparent;
-      color: #39c2d7; }
+      color: #39c2d7;
+      box-shadow: initial;
+      transform: initial; }
     .container header nav a:active {
       transform: scale(1.2); }
   .container main aside h2 {

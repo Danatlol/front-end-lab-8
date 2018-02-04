@@ -13,8 +13,6 @@ body,html,div{
 
     header{
         text-align: center;
-        position: relative;
-        // z-index: 10;
 
         h1{
             display: none;
@@ -38,21 +36,20 @@ body,html,div{
                 padding: 2.5% 5%;
                 border-top: 1px outset $headerNavDividerColor;
                 user-select: none;
-                // transition: transform 0.15s ease-in-out, color 0.15s ease-in-out;
+                transition: transform $transitionDuration ease-in-out;
 
                 &:hover{
                     background-color: darken($headerNavBackgroundColor, 10%);
-                    // border: none;
-                    // z-index: 10;
-                    // transform: scale(1.5);
-                    // box-shadow: 0 0 30px black;
+                    border: none;
+                    z-index: 10;
+                    transform: scale(1.5);
+                    background-color: $headerNavHoverBackgroundColor;
+                    box-shadow: 0 0 30px $headerNavHoverBackgroundColor;
+                    color: $headerNavHoverColor;
                 }
 
                 &:active{
-                    background-color: lighten($headerNavBackgroundColor, 10%)                    
-                    // transform: scale(1.5);
-                    // box-shadow: 0 0 30px blue;
-                    // color: blue;
+                    transform: scale(1);
                 }
             }
         }
@@ -62,30 +59,16 @@ body,html,div{
         background-color: $mainBackgroundColor;
 
         aside{
-            // position: relative;
             overflow: hidden;
-            // text-align: center;
             background-image: url(../img/banner.jpg);
-            background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
-            // max-height: 420px;
-
-            // img{
-            //     max-width: 1320px;
-            //     max-height: 420px;
-            //     // height: 60vw;
-            // }
 
             h2{
-                // position: absolute;
                 padding: 2vw;
                 margin: 30vw 5vw 5vw;
                 background-color: $bannerHBackgroundColor;
                 color: $bannerHColor;
-                // bottom: 5vw;
-                // left: 5vw;
-                // right: 5vw;
                 font-size: 4.3vw;
                 cursor: default;
                 user-select: none;
@@ -163,10 +146,13 @@ body,html,div{
                 border-top: none;
                 padding: 0;
                 margin: 0 2% 3%;
+                transition: initial;
 
                 &:hover{
                     background-color: transparent;
                     color: $headerNavAHoverColor;
+                    box-shadow: initial;
+                    transform: initial;
                 }
 
                 &:active{
@@ -180,8 +166,6 @@ body,html,div{
                 h2{
                     background-color: transparent;
                     text-align: center;
-                    // bottom: auto;
-                    // top: 5vw;
                 }
             }
             
@@ -244,12 +228,7 @@ body,html,div{
                 h2{
                     font-size: 3.3vw;
                     text-align: left;
-                    margin: 8vw 50vw 5vw 5vw; 
-                    // right: 43vw;
-                    // left: 15vw;
-                    // top: 3vw;
-                    // bottom: 10vw;
-
+                    margin: 8vw 50vw 5vw 5vw;
                 }
             }
 

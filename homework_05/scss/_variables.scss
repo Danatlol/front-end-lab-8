@@ -2,15 +2,12 @@
 
 $basicFont: 14px/1.2 Arial, Helvetica, sans-serif;
 
-$color1: #fff;
-$color2: #333;
-$color3: #464547;
-$color4: #39c2d7;
-
 $containerBackgroundColor: #fff;
 $headerNavBackgroundColor: #e8e8e8;
 $headerNavColor: #000;
 $headerNavDividerColor: #bfbfbf;
+$headerNavHoverBackgroundColor: #39c2d7;
+$headerNavHoverColor: #fff;
 $mainBackgroundColor: #fff;
 $bannerHBackgroundColor: #39c2d7;
 $bannerHColor: #fff;
@@ -22,3 +19,4 @@ $footBackgroundColor: #39c2d7;
 $footColor: #fff;
 $headerNavAHoverColor: #39c2d7;
 
+$transitionDuration: 0.15s;
