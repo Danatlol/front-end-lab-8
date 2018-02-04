@@ -33,21 +33,16 @@ body, html, div {
   .container main {
     background-color: #fff; }
     .container main aside {
-      position: relative;
       overflow: hidden;
-      text-align: center; }
-      .container main aside img {
-        max-width: 1320px;
-        max-height: 420px; }
+      background-image: url(../img/banner.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover; }
       .container main aside h2 {
-        position: absolute;
         padding: 2vw;
-        margin: 0;
+        margin: 30vw 5vw 5vw;
         background-color: #39c2d7;
         color: #fff;
-        bottom: 5vw;
-        left: 5vw;
-        right: 5vw;
         font-size: 4.3vw;
         cursor: default;
         user-select: none; }
@@ -76,7 +71,7 @@ body, html, div {
     background-color: #39c2d7;
     color: #fff;
     text-align: center;
-    padding: 3vw;
+    padding: 2rem 3vw;
     font-weight: bold;
     font-size: 3vw; }
     .container footer a {
@@ -104,9 +99,7 @@ body, html, div {
       transform: scale(1.2); }
   .container main aside h2 {
     background-color: transparent;
-    text-align: center;
-    bottom: auto;
-    top: 5vw; }
+    text-align: center; }
   .container main section .wrapper-news {
     display: flex;
     justify-content: space-between;
@@ -130,7 +123,7 @@ body, html, div {
     padding: 0 15vw; }
     .container header img {
       display: inline-block;
-      margin: 3% 0;
+      margin: 2rem 0;
       vertical-align: middle; }
     .container header nav {
       text-align: left;
@@ -138,14 +131,11 @@ body, html, div {
       margin: 3% 0 3% 5vw;
       vertical-align: middle; }
       .container header nav a {
-        font-size: 1.7vw; }
+        font-size: 1.1rem; }
   .container main aside h2 {
     font-size: 3.3vw;
     text-align: left;
-    right: 43vw;
-    left: 15vw;
-    top: 3vw;
-    bottom: 10vw; }
+    margin: 8vw 50vw 5vw 5vw; }
   .container main section .wrapper-news {
     padding: 0 15% 3vw; }
     .container main section .wrapper-news article {
@@ -154,12 +144,12 @@ body, html, div {
       padding: 1vw; }
   .container footer {
     text-align: left;
-    font-size: 1.6em;
+    font-size: 1.2em;
     padding-left: 15%;
     padding-right: 15%; }
     .container footer nav {
       display: inline-block;
-      width: 50%; }
+      width: 33vw; }
       .container footer nav a {
         margin: 0 3% 0 0;
         display: inline; }

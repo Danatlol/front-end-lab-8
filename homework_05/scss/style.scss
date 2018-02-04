@@ -62,25 +62,30 @@ body,html,div{
         background-color: $mainBackgroundColor;
 
         aside{
-            position: relative;
+            // position: relative;
             overflow: hidden;
-            text-align: center;
+            // text-align: center;
+            background-image: url(../img/banner.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            // max-height: 420px;
 
-            img{
-                max-width: 1320px;
-                max-height: 420px;
-                // height: 60vw;
-            }
+            // img{
+            //     max-width: 1320px;
+            //     max-height: 420px;
+            //     // height: 60vw;
+            // }
 
             h2{
-                position: absolute;
+                // position: absolute;
                 padding: 2vw;
-                margin: 0;
+                margin: 30vw 5vw 5vw;
                 background-color: $bannerHBackgroundColor;
                 color: $bannerHColor;
-                bottom: 5vw;
-                left: 5vw;
-                right: 5vw;
+                // bottom: 5vw;
+                // left: 5vw;
+                // right: 5vw;
                 font-size: 4.3vw;
                 cursor: default;
                 user-select: none;
@@ -127,7 +132,7 @@ body,html,div{
         background-color: $footBackgroundColor;
         color: $footColor;
         text-align: center;
-        padding: 3vw;
+        padding: 2rem 3vw;
         font-weight: bold;
         font-size: 3vw;
 
@@ -175,8 +180,8 @@ body,html,div{
                 h2{
                     background-color: transparent;
                     text-align: center;
-                    bottom: auto;
-                    top: 5vw;
+                    // bottom: auto;
+                    // top: 5vw;
                 }
             }
             
@@ -218,7 +223,7 @@ body,html,div{
 
             img{
                 display: inline-block;
-                margin: 3% 0;
+                margin: 2rem 0;
                 vertical-align: middle;
             }
 
@@ -229,7 +234,7 @@ body,html,div{
                 vertical-align: middle;
 
                 a{
-                    font-size: 1.7vw;
+                    font-size: 1.1rem;
                 }
             }
         }
@@ -239,10 +244,11 @@ body,html,div{
                 h2{
                     font-size: 3.3vw;
                     text-align: left;
-                    right: 43vw;
-                    left: 15vw;
-                    top: 3vw;
-                    bottom: 10vw;
+                    margin: 8vw 50vw 5vw 5vw; 
+                    // right: 43vw;
+                    // left: 15vw;
+                    // top: 3vw;
+                    // bottom: 10vw;
 
                 }
             }
@@ -260,13 +266,13 @@ body,html,div{
 
         footer{
             text-align: left;
-            font-size: 1.6em;
+            font-size: 1.2em;
             padding-left: 15%;
             padding-right: 15%;
 
             nav{
                 display: inline-block;
-                width: 50%;
+                width: 33vw;
 
                 a{
                     margin: 0 3% 0 0;
@@ -277,7 +283,6 @@ body,html,div{
             small{
                 display: inline-block;
                 padding: 0;
-                // font
             }
         }
     }
