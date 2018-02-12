@@ -1,0 +1,174 @@
+
+
+
+@mixin mBody($bodyBackgroundColor, $contentBackgroundColor, $headerColor, $fontColor, $aLinkColor, $aVisitedColor, $aHoverColor, $isHeaderUpperCase){
+    background: $bodyBackgroundColor;
+    margin: 0;
+
+    #content{
+        width: 960px;
+        margin-right: auto;
+        margin-left: auto;
+        background: $contentBackgroundColor;
+        padding: 0.5rem 1.5rem;
+
+        h1{
+            text-align: center;
+            @if $isHeaderUpperCase == 'true' {
+                text-transform: uppercase;
+             }
+        }
+
+        h1,h2{
+            color: $headerColor;
+            font-weight: bold;
+        }
+
+        p{
+            margin: 1.5rem 0;
+            color: $fontColor;
+        }
+
+        a{
+            &:link{
+                color: $aLinkColor;
+            }
+
+            &:hover{
+                color: $aHoverColor;
+            }
+            
+            &:visited{
+                color: $aVisitedColor;
+            }
+        }
+    }
+}
+
+@mixin mFontProp($fontColor){
+    p{
+        color: $fontColor;
+    }
+}
+
+.img-left{
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.img-right{
+    float: right;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+@mixin mBrief($briefBackgroundColor, $isBriefFloat, $briefWidth){
+    .brief{
+        padding: 1.5rem;
+        background: $briefBackgroundColor;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        @if $isBriefFloat == 'true' {
+            float: left;
+            width: $briefWidth;
+         }
+    }
+}
+
+@mixin mImgBorder($imgBorderColor, $imgBorderWidth){
+    img{
+        border: $imgBorderWidth solid $imgBorderColor;
+        padding: 3px;
+    }
+}
+
+@mixin mTable($tableThBackgroundColor, $tableTdBackgroundColor, $tableBorderColor, $tableFontColor){
+    table{
+        border-collapse: collapse;
+        margin-right: auto;
+        margin-left: auto;
+
+        th,td{
+            padding: 0.5rem 1.5rem;
+        }
+
+        caption{
+            text-align: right;
+        }
+
+        th{
+            text-align: left;
+            text-transform: uppercase;
+            font-weight: 700;
+            background: $tableThBackgroundColor;
+            &:nth-child(-n+2){
+                border-right: 1px solid white;
+            }
+        }
+
+        td{
+            background: $tableTdBackgroundColor;
+            color: $tableFontColor;
+        }
+
+        tr{
+            border-bottom: 1px solid $tableBorderColor;
+        }
+    }
+}
+
+@mixin mForm($formLabelColor, $btnBorderColor, $btnColor){
+    form{
+        overflow: auto;
+
+        label{
+            margin-bottom: 0.5rem;
+            color: $formLabelColor;
+        }
+
+        input{
+            margin-bottom: 1rem;
+            width: calc(100% - 4px);
+            height: 2rem;
+            font-size: 1.2rem;
+        }
+
+        textarea{
+            width: calc(100% - 6px);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        button{
+            background: transparent;
+            border: 1px solid $btnBorderColor;
+            color: $btnColor;
+            padding: 0.8rem 4rem;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            transition: background-color 0.2s ease-in, color 0.2s ease-in, transform 0.15s linear;
+            transform-origin: 0.5 0.5;
+
+            &:hover{
+                background-color: $btnBorderColor;
+                color: invert($color: $btnColor);
+                cursor: pointer;
+            }
+
+            &:active{
+                transform: scale(0);
+            }
+        }
+    }
+
+    .left-block{
+        float: left;
+        width: 49%;
+    }
+
+    .right-block{
+        float: right;
+        width: 49%;
+    }
+}

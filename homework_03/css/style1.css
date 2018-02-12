@@ -1,0 +1,106 @@
+.img-left {
+  float: left;
+  margin-right: 1rem;
+  margin-bottom: 1rem; }
+
+.img-right {
+  float: right;
+  margin-left: 1rem;
+  margin-bottom: 1rem; }
+
+body {
+  background: #dcbb9a;
+  margin: 0; }
+  body #content {
+    width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+    background: #ffffff;
+    padding: 0.5rem 1.5rem; }
+    body #content h1 {
+      text-align: center; }
+    body #content h1, body #content h2 {
+      color: #893c00;
+      font-weight: bold; }
+    body #content p {
+      margin: 1.5rem 0;
+      color: #000000; }
+    body #content a:link {
+      color: #3d70a1; }
+    body #content a:hover {
+      color: #78a3cc; }
+    body #content a:visited {
+      color: #213d57; }
+
+.brief {
+  padding: 1.5rem;
+  background: #fadcba;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  float: left;
+  width: 370px; }
+
+img {
+  border: 3px solid #893c00;
+  padding: 3px; }
+
+table {
+  border-collapse: collapse;
+  margin-right: auto;
+  margin-left: auto; }
+  table th, table td {
+    padding: 0.5rem 1.5rem; }
+  table caption {
+    text-align: right; }
+  table th {
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 700;
+    background: #e0e0e0; }
+    table th:nth-child(-n+2) {
+      border-right: 1px solid white; }
+  table td {
+    background: #ffffff;
+    color: #000000; }
+  table tr {
+    border-bottom: 1px solid #e0e0e0; }
+
+form {
+  overflow: auto; }
+  form label {
+    margin-bottom: 0.5rem;
+    color: #7a7a7a; }
+  form input {
+    margin-bottom: 1rem;
+    width: calc(100% - 4px);
+    height: 2rem;
+    font-size: 1.2rem; }
+  form textarea {
+    width: calc(100% - 6px);
+    font-size: 1.2rem;
+    margin-bottom: 1rem; }
+  form button {
+    background: transparent;
+    border: 1px solid #3d70a1;
+    color: #3d70a1;
+    padding: 0.8rem 4rem;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    transition: background-color 0.2s ease-in, color 0.2s ease-in, transform 0.15s linear;
+    transform-origin: 0.5 0.5; }
+    form button:hover {
+      background-color: #3d70a1;
+      color: #c28f5e;
+      cursor: pointer; }
+    form button:active {
+      transform: scale(0); }
+
+.left-block {
+  float: left;
+  width: 49%; }
+
+.right-block {
+  float: right;
+  width: 49%; }
+
+/*# sourceMappingURL=style1.css.map */
