@@ -32,7 +32,7 @@ if (start) {
         num = Math.floor(num);
         for (let i = 0; i < MAX_TRIES; ++i) {
 
-            let inData = prompt(num + "\nEnter a number from 0 to " + gameRange[1] +
+            let inData = prompt("Enter a number from 0 to " + gameRange[1] +
                 "\nAttempts left: " + (MAX_TRIES - i) + "\nTotal prize: " + totalPrize +
                 "$\nPossible prize on current attempt: " + Math.trunc(gamePrize / (2 ** i)) + "$", "");
 
@@ -40,7 +40,7 @@ if (start) {
             if (inData === null) {
                 break;
             }
-            else if(inData.trim().length === 0){
+            else if (inData.trim().length === 0) {
                 inData = NaN;
             }
             else if (Number(inData) === num) {
