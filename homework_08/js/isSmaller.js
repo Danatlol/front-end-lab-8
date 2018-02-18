@@ -1,3 +1,3 @@
 function isSmaller(lOperand, rOperand) {
-    return lOperand < rOperand;
+    return isBigger(rOperand, lOperand);
 }
