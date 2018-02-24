@@ -1,0 +1,53 @@
+
+.material-icons{
+    color: orange;
+}
+
+.empty{
+    font-style: italic;
+    cursor: pointer;
+}
+
+.noIcons{
+    list-style-type: none;
+    padding-left: 20px;
+    user-select: none;
+}
+
+.closed{
+    display: none;
+}
+
+.opened{
+    display: block;
+}
+
+.head-wrapper{
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.head-wrapper:hover{
+    background-color: rgba(100, 100, 100, 0.35);
+}
+
+.mouseReaction{
+    position: fixed;
+    height: 2rem;
+    width: 2rem;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    background-color: rgba(200, 70, 50, 0.35);
+    z-index: 10;
+}
+
+.notshow{
+    display: none;
+}
+
+.show{
+    display: inline-block;
+}
