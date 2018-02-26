@@ -1,11 +1,5 @@
-
 .material-icons{
-    color: orange;
-}
-
-.empty{
-    font-style: italic;
-    cursor: pointer;
+    color: #ff9900;
 }
 
 .noIcons{
@@ -26,6 +20,7 @@
     display: flex;
     align-items: center;
     padding: 2px;
+    height: 1.8rem;
     cursor: pointer;
 }
 

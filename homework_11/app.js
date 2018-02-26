@@ -1,121 +1,71 @@
 var rootNode = document.getElementById("root");
 
-// Your code goes here
-
-
 let view = document.createElement("ul");
 view.className = "noIcons";
+view = makeHTMLView(structure, view);
 
-
-makeHTMLView(structure, view);
-let mouseClickObj = document.createElement("li");
+// create object for mouse reaction
+let mouseClickObj = document.createElement("div");
 mouseClickObj.className = "mouseReaction notshow";
-
-
 
 function makeHTMLView(structure, node) {
     // if structure has no elements (child)
     if (structure === false || structure === null) {
-        node.appendChild(createStNode("empty"));
-        return;
+        node.appendChild(createNodeEx("empty"));
+        return node;
     }
 
     // if structure has elements (children)
     for (let i = 0; i < structure.length; ++i) {
         // if folder
         if (structure[i].folder === true) {
-            node.appendChild(createStNode("folder", structure[i].title));
+            node.appendChild(createNodeEx("folder", structure[i].title));
             makeHTMLView(structure[i].children, node.childNodes[i].childNodes[1]);
         }
         // if file
         if (structure[i].folder === undefined) {
-            node.appendChild(createStNode("file", structure[i].title));
+            node.appendChild(createNodeEx("file", structure[i].title));
         }
     }
-    return;
+    return node;
 }
 
-
-
 // create empty node
-function createEmptyNode(msg = "Folder is empty") {
+function createEmptyNode() {
     let retNode = document.createElement("li");
-    retNode.className = "empty";
-    retNode.appendChild(document.createTextNode(msg));
+    retNode.appendChild(createTitleNode());
     return retNode;
 }
 
 // create file node
 function createFileNode(fileName) {
     let retNode = document.createElement("li");
-    retNode.className = "head-wrapper";
-
-    retNode.appendChild(createIconNode("description"));
-    retNode.appendChild(document.createElement("span"));
-    retNode.childNodes[1].appendChild(document.createTextNode(fileName));
+    retNode.appendChild(createTitleNode(fileName, "file", "description"));
     return retNode;
 }
 
 // create folder node
 function createFolderNode(folderName) {
-    // main element
     let retNode = document.createElement("li");
-    // retNode.className = "folder";
-    // header element
-    let wrapNode = document.createElement("div");
-    wrapNode.className = "head-wrapper";
-    wrapNode.appendChild(createIconNode("folder"));
-    wrapNode.appendChild(document.createElement("span"));
-    wrapNode.childNodes[1].appendChild(document.createTextNode(folderName));
-    wrapNode.addEventListener("click", (eve) => {
-        let list = eve.currentTarget.nextElementSibling;
-        eve.currentTarget.firstElementChild.innerHTML = (list.classList.contains("closed")) ? "folder_open" : "folder";
-        list.classList.toggle("opened");
-        list.classList.toggle("closed");
-    }, false);
+    retNode.appendChild(createTitleNode(folderName, "folder", "folder"));
 
-
-
-    wrapNode.addEventListener("mousemove", function(eve){
-        mouseClickObj.style.top = `calc(${eve.clientY}px - 1rem)`;
-        mouseClickObj.style.left = `calc(${eve.clientX}px - 1rem)`;
-    });
-    
-    wrapNode.addEventListener("mousedown", function(eve){
-
-        wrapNode.appendChild(mouseClickObj);
-
-        mouseClickObj.style.top = `calc(${eve.clientY}px - 1rem)`;
-        mouseClickObj.style.left = `calc(${eve.clientX}px - 1rem)`;
-        mouseClickObj.classList.toggle("show");
-        mouseClickObj.classList.toggle("notshow");
-    });
-    
-    wrapNode.addEventListener("mouseup", function(eve){
-        mouseClickObj.remove();
-        mouseClickObj.classList.toggle("show");
-        mouseClickObj.classList.toggle("notshow");
-    });
-
-
-    retNode.appendChild(wrapNode);
-    // children container element (<ul>...</ul>)
+    // children container element for folder's items (<ul>...</ul>)
     let ulNode = document.createElement("ul");
-    ulNode.className = "noIcons closed";
+    ulNode.classList.add("noIcons", "closed");
     retNode.appendChild(ulNode);
     return retNode;
 }
 
 // create the node with icon of different types
-function createIconNode(type) {
+function createIconNode(icon) {
     let tempNode = document.createElement("i");
     tempNode.className = "material-icons";
-    tempNode.appendChild(document.createTextNode(type));
+    tempNode.appendChild(document.createTextNode(icon));
     return tempNode;
 }
 
-// create node
-function createStNode(type, title) {
+// create node extended
+function createNodeEx(type, title) {
     if (String(type).toLowerCase() === "empty") {
         return createEmptyNode(title);
     }
@@ -128,14 +78,55 @@ function createStNode(type, title) {
     return null;
 }
 
+// create the header node of different types
+function createTitleNode(title = "Folder is empty", type = "empty", icon = "") {
+    let retNode = document.createElement("div");
+    retNode.classList.add("head-wrapper");
 
+    // add event handler for circle mouse reaction (for all type of elements)
+    retNode.addEventListener("mouseenter", function () {
+        retNode.appendChild(mouseClickObj);
+    });
+
+    retNode.addEventListener("mousemove", function (eve) {
+        mouseClickObj.style.top = `calc(${eve.clientY}px - 1rem)`;
+        mouseClickObj.style.left = `calc(${eve.clientX}px - 1rem)`;
+    });
+
+    retNode.addEventListener("mousedown", function (eve) {
+        mouseClickObj.classList.add("show");
+        mouseClickObj.classList.remove("notshow");
+    });
+
+    retNode.addEventListener("mouseup", function (eve) {
+        mouseClickObj.classList.add("notshow");
+        mouseClickObj.classList.remove("show");
+    });
+
+    // if type is empty the node is ready
+    if (type === "empty") {
+        retNode.innerHTML = `<i>${title}</i>`;
+        return retNode;
+    }
+
+    retNode.appendChild(createIconNode(icon));
+    retNode.appendChild(document.createElement("span"));
+    retNode.children[1].appendChild(document.createTextNode(title));
+
+    // if type is file the node is ready
+    if (type === "file") {
+        return retNode;
+    }
+
+    // add event handler for closing/opening folders
+    retNode.addEventListener("click", (eve) => {
+        let list = eve.currentTarget.nextElementSibling;
+        eve.currentTarget.firstElementChild.innerHTML = (list.classList.contains("closed")) ? "folder_open" : "folder";
+        list.classList.toggle("opened");
+        list.classList.toggle("closed");
+    });
+
+    return retNode;
+}
 
 rootNode.appendChild(view);
-
-
-
-// debugger;
-
-
-
-// rootNode.appendChild(/* Append your TreeView node*/);
