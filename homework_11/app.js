@@ -1,8 +1,8 @@
 var rootNode = document.getElementById("root");
 
-let view = document.createElement("ul");
+
+let view = makeHTMLView(structure, document.createElement("ul"));
 view.className = "noIcons";
-view = makeHTMLView(structure, view);
 
 // create object for mouse reaction
 let mouseClickObj = document.createElement("div");
@@ -28,6 +28,20 @@ function makeHTMLView(structure, node) {
         }
     }
     return node;
+}
+
+// create node extended
+function createNodeEx(type, title) {
+    if (String(type).toLowerCase() === "empty") {
+        return createEmptyNode(title);
+    }
+    if (String(type).toLowerCase() === "file") {
+        return createFileNode(title);
+    }
+    if (String(type).toLowerCase() === "folder") {
+        return createFolderNode(title);
+    }
+    return null;
 }
 
 // create empty node
@@ -56,28 +70,6 @@ function createFolderNode(folderName) {
     return retNode;
 }
 
-// create the node with icon of different types
-function createIconNode(icon) {
-    let tempNode = document.createElement("i");
-    tempNode.className = "material-icons";
-    tempNode.appendChild(document.createTextNode(icon));
-    return tempNode;
-}
-
-// create node extended
-function createNodeEx(type, title) {
-    if (String(type).toLowerCase() === "empty") {
-        return createEmptyNode(title);
-    }
-    if (String(type).toLowerCase() === "file") {
-        return createFileNode(title);
-    }
-    if (String(type).toLowerCase() === "folder") {
-        return createFolderNode(title);
-    }
-    return null;
-}
-
 // create the header node of different types
 function createTitleNode(title = "Folder is empty", type = "empty", icon = "") {
     let retNode = document.createElement("div");
@@ -88,10 +80,11 @@ function createTitleNode(title = "Folder is empty", type = "empty", icon = "") {
         retNode.appendChild(mouseClickObj);
     });
 
-    retNode.addEventListener("mousemove", function (eve) {
-        mouseClickObj.style.top = `calc(${eve.clientY}px - 1rem)`;
-        mouseClickObj.style.left = `calc(${eve.clientX}px - 1rem)`;
-    });
+    // throttling mousemove event
+    retNode.addEventListener("mousemove", throttle(function (eve) {
+        mouseClickObj.style.top = `calc(${eve.clientY}px - 0.95rem)`;
+        mouseClickObj.style.left = `calc(${eve.clientX}px - 0.95rem)`;
+    }, 50));
 
     retNode.addEventListener("mousedown", function (eve) {
         mouseClickObj.classList.add("show");
@@ -127,6 +120,26 @@ function createTitleNode(title = "Folder is empty", type = "empty", icon = "") {
     });
 
     return retNode;
+}
+
+// create the node with icon of different types
+function createIconNode(icon) {
+    let tempNode = document.createElement("i");
+    tempNode.className = "material-icons";
+    tempNode.appendChild(document.createTextNode(icon));
+    return tempNode;
+}
+
+// throttling function for mousemove event
+function throttle(action, interval) {
+    let canUse = true;
+    return function () {
+        if (canUse) {
+            action(...arguments);
+            canUse = false;
+            setTimeout(() => { canUse = true; }, interval);
+        }
+    };
 }
 
 rootNode.appendChild(view);
