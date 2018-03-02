@@ -1,4 +1,3 @@
-// Your code goes here
 let root = document.getElementById("root");
 
 // for good first start and for reload page on tank-details page
