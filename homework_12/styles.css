@@ -1,9 +1,4 @@
 /* Your styles goes here */
-
-
-
-
-
 body, html{
     margin: 0;
     padding: 0;
@@ -19,16 +14,17 @@ a{
     color: rgb(161, 158, 137);
 }
 
+img{
+    max-width: 100%;
+}
 
 /*
 * Main page styles
 */
-
-
-
 .main-header{
     color: rgb(161, 158, 137);
     margin: 2rem;
+	user-select: none;
 }
 
 .thumbnails-list{
@@ -40,37 +36,25 @@ a{
 /*
 * Thumbnail styles
 */
-
 .thumbnail-item{
     width: 250px;
     display: inline-block;
-    transform-origin: 0.5 0.5;
+    transform-origin: center center;
     transition: transform 0.2s ease-in;
+    cursor: pointer;
 }
 
 .thumbnail-item:hover{
     background-color: rgb(44, 44, 44);
     transform: scale(1.2);
+    box-shadow: 0 0 10px yellow;
 }
 
-/* .thumbnail-item>a{
-    text-decoration: none;
-    /* margin: 20px 10px; 
-} */
-
-.thumbnail-figure{
-    /* margin: 20px 10px; */
-    /* margin: 0; */
-    margin: 0 10px;
+.thumbnail-item figure{
+    margin: 20px 10px;
 }
 
-.thumbnail-figure>img{
-    max-width: 100%;
-    /* margin-top: 40px; */
-    margin-top: 20px;
-}
-
-.thumbnail-figure figcaption{
+.thumbnail-item figcaption{
     padding: 0 15px;
     font-size: 1rem;
     color: rgb(214, 209, 186);
@@ -78,14 +62,13 @@ a{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-bottom: 20px;
 }
 
-.thumbnail-figure figcaption img{
+.thumbnail-item figcaption img{
     max-height: 0.75rem;
 }
 
-.thumbnail-figure figcaption em{
+.thumbnail-item figcaption em{
     color: rgb(161, 158, 137);
     font-style: normal;
     font-weight: bold;
@@ -98,10 +81,9 @@ a{
 /*
 * Tank details styles
 */
-
 .tank-details-header{
     color: rgb(161, 158, 137);
-    margin: 3%;
+    margin: 1% 3% 2%;
     user-select: none;
 }
 
@@ -111,26 +93,22 @@ a{
     font-weight: bold;
     float: left;
     width: 35%;
-    margin: 3% 3% 3% 3%;
+    margin: 3% 3% 0 3%;
     user-select: none;
-}
-
-img{
-    max-width: 100%;
 }
 
 .back-link{
     text-decoration: none;
     color: rgb(161, 158, 137);
     font-size: 1.2rem;
-    display: inline-block;
-    margin: 3%;
-    transform-origin: 0.5 0.5;
-    transition: transform 0.2s ease-in-out;
+    display: block;
+    clear: both;
+    margin: 0 3%;
+    transition: font-size 0.2s ease-in-out;
 }
 
 .back-link:hover{
-    transform: scale(1.2);
+    font-size: 1.4rem;
 }
 
 .details{
@@ -138,11 +116,6 @@ img{
     margin-top: 6%;
     border-collapse: collapse;
     width: 56%;
-    table-layout: fixed;
-}
-
-tr td:first-child{
-    width: 70%;
 }
 
 .details caption{
@@ -151,6 +124,10 @@ tr td:first-child{
     font-weight: bold;
     margin-bottom: 1rem;
     text-align: left;
+}
+
+tr td:first-child{
+    width: 70%;
 }
 
 td{

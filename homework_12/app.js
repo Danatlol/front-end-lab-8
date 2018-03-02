@@ -1,31 +1,36 @@
 // Your code goes here
-
-
-
-
-
 let root = document.getElementById("root");
-root.appendChild(makeMainContent(tanks));
 
+// for good first start and for reload page on tank-details page
+if (window.location.hash === "" || window.location.hash === "#main") {
+    window.location.hash = "#main";
+    root.appendChild(makeMainContent(tanks));
+}
+else {
+    root.appendChild(makeTankDetailsContent(getTankByHash()));
+}
 
-// console.log(root.removeChild(root.firstChild));
+// function for delete all children
+function removeAllChildren(elem) {
+    while (elem.firstChild) {
+        elem.removeChild(elem.firstChild);
+    }
+}
 
 // event handler for onhashchange
 window.onhashchange = function (eve) {
-    console.log("hash is change", window.location.hash);
-    if (window.location.hash === "") {
-        while (root.firstChild) {
-            root.removeChild(root.firstChild);
-        }
+    // remove all children from root element
+    removeAllChildren(root);
+    // if main page
+    if (window.location.hash === "#main") {
         root.appendChild(makeMainContent(tanks));
         return;
     }
-    while (root.firstChild) {
-        root.removeChild(root.firstChild);
-    }
-
+    // if tank details pages
     root.appendChild(makeTankDetailsContent(getTankByHash()));
 };
+
+
 
 // function to select need tank from tanks[] by window.location.hash
 function getTankByHash() {
@@ -63,35 +68,31 @@ function makeThumbnail(tank) {
     let thumbItem = document.createElement("li");
     thumbItem.classList.add("thumbnail-item");
     thumbItem.title = "Click to details";
+    thumbItem.addEventListener("click", function (eve) {
+        window.location.hash = tank.model.replace(/\s/g, "_");
+    });
 
-    // create a link
-    let wrapLink = document.createElement("a");
-    wrapLink.href = "#" + String(tank.model).replace(/\s/g, "_");
-
-    // create a figure
+    // create an inner elements for list item
     let thumbFigure = document.createElement("figure");
-    thumbFigure.classList.add("thumbnail-figure");
 
-    // create image
     let thumbImg = document.createElement("img");
     thumbImg.src = tank.preview;
 
-    // create figcaption
-    let figcap = document.createElement("figcaption");
-    figcap.appendChild(makeFigcaptionContent());
-    // figcap.innerHTML = `<img src = "${tank.country_image}"><em>${tank.level}</em><b>` + tank.model.toUpperCase() + "</b>";
+    let thumbFigcap = document.createElement("figcaption");
 
+    // adding all inner elements to thumbFigure and thumbItem
+    thumbFigcap.appendChild(makeFigcaptionContent());
     thumbFigure.appendChild(thumbImg);
-    thumbFigure.appendChild(figcap);
-    wrapLink.appendChild(thumbFigure);
-    thumbItem.appendChild(wrapLink);
+    thumbFigure.appendChild(thumbFigcap);
+    thumbItem.appendChild(thumbFigure);
 
     return thumbItem;
-    // function for inner using
+
+    // function for inner using to separate creating of figcaption for thumbFigure from other actions
     function makeFigcaptionContent() {
         let retDoc = document.createDocumentFragment();
 
-        // creating elements
+        // creating inner elements for figcaption
         let flagImg = document.createElement("img");
         flagImg.src = tank.country_image;
         flagImg.title = tank.country.toUpperCase();
@@ -103,7 +104,7 @@ function makeThumbnail(tank) {
         tankModel.appendChild(document.createTextNode(tank.model.toUpperCase()));
         tankModel.title = tank.model.toUpperCase();
 
-        // adding elements
+        // adding inner elements
         retDoc.appendChild(flagImg);
         retDoc.appendChild(tankLvl);
         retDoc.appendChild(tankModel);
@@ -118,60 +119,50 @@ function makeThumbnail(tank) {
 function makeTankDetailsContent(tank) {
     let retDoc = document.createDocumentFragment();
 
-    // header
+    // creating and appending header of tank details page
     retDoc.appendChild(makeHeader());
 
-    // preview
+    // creating preview of tank
     let previewFig = document.createElement("figure");
     previewFig.classList.add("preview-figure");
+
     let previewTitle = document.createElement("figcaption");
     previewTitle.appendChild(document.createTextNode("Preview"));
+    previewFig.appendChild(previewTitle);
+
     let previewImg = document.createElement("img");
     previewImg.src = tank.preview;
+    previewFig.appendChild(previewImg);
 
-
-    // table
+    // creating the table with details of tank
     let details = document.createElement("table");
     details.classList.add("details");
     let detailsTitle = document.createElement("caption");
     detailsTitle.appendChild(document.createTextNode("Characteristic"));
     details.appendChild(detailsTitle);
 
-    for(let key in tank.details){
-        let tr = document.createElement("tr");
-        let td1 = document.createElement("td");
-        td1.appendChild(document.createTextNode(key.replace(/_/g, " ")));
-        let td2 = document.createElement("td");
-        td2.appendChild(document.createTextNode(tank.details[key]));
-        tr.appendChild(td1);
-        tr.appendChild(td2);
-        details.appendChild(tr);
+    for (let key in tank.details) {
+        let trItem = makeTableRowItem(key, tank.details[key]);
+        details.appendChild(trItem);
     }
 
-    // footer
+    // creating the backlink
     let backLink = document.createElement("a");
-    backLink.href = "#";
+    backLink.href = "#main";
     backLink.classList.add("back-link");
     backLink.appendChild(document.createTextNode("Back to list view"));
 
-    previewFig.appendChild(previewTitle);
-    previewFig.appendChild(previewImg);
-
     retDoc.appendChild(previewFig);
-
     retDoc.appendChild(details);
-
-    let temp = document.createElement("div");
-    temp.style.clear = "both";
-    retDoc.appendChild(temp);
     retDoc.appendChild(backLink);
 
     return retDoc;
-    // function for inner using
+    // function for inner using to separate code
+    // create the header for tank details page
     function makeHeader() {
         let retHeader = document.createElement("h1");
         retHeader.classList.add("tank-details-header");
-        // creating elements
+        // creating inner elements of header
         let flagImg = document.createElement("img");
         flagImg.src = tank.country_image;
         flagImg.title = tank.country.toUpperCase();
@@ -179,5 +170,17 @@ function makeTankDetailsContent(tank) {
         retHeader.appendChild(flagImg);
         retHeader.appendChild(document.createTextNode(" " + tank.model.toUpperCase() + " (level " + tank.level + ")"));
         return retHeader;
+    }
+
+    // function for inner using to separate code of creating <tr> element
+    function makeTableRowItem(charType, charValue) {
+        let retTRItem = document.createElement("tr");
+        let characteristicType = document.createElement("td");
+        characteristicType.appendChild(document.createTextNode(charType));
+        let characteristicValue = document.createElement("td");
+        characteristicValue.appendChild(document.createTextNode(charValue));
+        retTRItem.appendChild(characteristicType);
+        retTRItem.appendChild(characteristicValue);
+        return retTRItem;
     }
 }
