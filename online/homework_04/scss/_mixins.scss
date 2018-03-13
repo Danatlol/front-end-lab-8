@@ -1,0 +1,34 @@
+
+@mixin subscribeInput($inputWidth, $inputFirstFr, $inputSecondFr){
+    .subscribeInput{
+        width: $inputWidth;
+
+        input{
+            font-size: 1.1vw;
+            padding: 1vw 2vw;
+            box-sizing: border-box;
+        }
+
+        input[type="email"]{
+            background: $mainBackgroundColor;
+            width: $inputFirstFr;
+            border: 1px solid $subscribeEmailInputBorderColor;
+        }
+
+        input[type="submit"]{
+            background: $subsrcibeSubmitBtnBackgroundColor;
+            color: $subscribeSubmitBtnColor;
+            width: $inputSecondFr;
+            border: 1px solid $subsrcibeSubmitBtnBorderColor;
+            cursor: pointer;
+
+            &:hover{
+                background-color: lighten($subsrcibeSubmitBtnBackgroundColor, 10%);
+            }
+
+            &:active{
+                background-color: darken($subsrcibeSubmitBtnBackgroundColor, 10%)
+            }
+        }
+    }
+}
