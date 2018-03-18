@@ -1,0 +1,29 @@
+
+// mixin, that generate the thumbnail's style using different colors
+.makeThumbnail(@mainColor: @grey, @titleColor: @white){
+    border: 1px solid @mainColor;
+
+    .thumbnail-img{
+        max-width: 100%;
+        height: auto;
+    }
+
+    .thumbnail-title{
+        text-align: center;
+        background-color: @mainColor;
+        color: @titleColor;
+        padding: 0.5rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        user-select: none;
+    }
+}
+
+// mixin, that generate a set of thumbnail items
+.generate-thumbnail(@i: 1) when (@i =< length(@colors)) {
+    .@{thumbnail-name}-@{i} {
+    .makeThumbnail(extract(@colors, @i));
+    }
+    .generate-thumbnail(@i + 1);
+}

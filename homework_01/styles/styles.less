@@ -1,0 +1,29 @@
+
+@import "variables";
+@import "mixins";
+@import "base";
+
+//overriding bootstrap styles
+.nav-link:hover{
+    background: @navLinkHoverBackgroundColor;
+    color: @navLinkHoverColor !important;
+}
+
+.nav-link:active{
+    background: darken(@navLinkHoverBackgroundColor,10%);
+}
+
+.header-underlined{
+    border-bottom: 1px solid @headerBorderColor;
+}
+
+
+
+// own styles for related class module
+.generate-thumbnail();
+
+.footer{
+    color: @footerColor;
+    background-color: @footerBackgroundColor;
+    padding: 0.5rem;
+}
