@@ -93,9 +93,6 @@ let Creature = (function () {
         }
     };
 
-
-    // public methods
-
     // getter for totalHitpoints
     Creature.prototype.getTotalHitpoints = function () {
         return privateData.get(this).totalHitpoints;
@@ -259,7 +256,7 @@ let Champion = (function () {
         return true;
     };
 
-    // calculate real attack power with modifiers(base)
+    // calculate real attack power with modifiers
     // overriding function
     Champion.prototype._calculateAttackWithDefenceModifiers = function (attack) {
         let data = privateData.get(this);
