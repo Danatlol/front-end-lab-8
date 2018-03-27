@@ -1,8 +1,3 @@
-
-
-
-// TODO: remove layout comments before submitting homework
-// Task 1
 function assign(extendedObject, ...objects) {
     for (let i = 0; i < objects.length; ++i) {
         for (let key in objects[i]) {
@@ -35,11 +30,6 @@ console.log(configs);
 
 
 
-
-// TODO: remove layout comments before submitting homework
-// Task 2
-
-
 // CREATURE
 let Creature = (function () {
 
@@ -49,7 +39,7 @@ let Creature = (function () {
     const DEFAULT_ATTACK = 5;
     const DEFAULT_HITPOINTS = 50;
 
-    // field for private properties(using clousure)
+    // field for private properties
     let privateData = new WeakMap();
 
     // constructor
@@ -227,9 +217,6 @@ let Creature = (function () {
 
 
 
-
-
-
 // CHAMPION
 let Champion = (function () {
 
@@ -239,6 +226,7 @@ let Champion = (function () {
     const DEFENCE_BLOCK_TRIES = 2;
     const KILL_INCREASE_ATTACK = 1;
 
+    // field for private properties
     let privateData = new WeakMap();
 
     // constructor
@@ -246,10 +234,6 @@ let Champion = (function () {
         Creature.call(this, config);
         // private properties
         privateData.set(this, {
-            /*HEAL_VALUE: 5,
-            DEFENCE_INCREASE_HP_VALUE: 1,
-            DEFENCE_BLOCK_TRIES: 2,
-            KILL_INCREASE_ATTACK: 1,*/
             defenceBlockTries: 0
         });
     }
@@ -302,29 +286,22 @@ let Champion = (function () {
 
 
 
-
-
-
-
-
 // MONSTER
 let Monster = (function () {
 
+    // default constant
     const FURY_DECREASE_HP = 5;
     const FURY_INCREASE_ATTACK = 2;
     const ENRAGE_ATTACK_TRIES = 2;
     const ENRAGE_ATTACK_MULTIPLIER = 2;
 
+    // field for private properties
     let privateData = new WeakMap();
 
     function Monster(config) {
         Creature.call(this, config);
         // private properties
         privateData.set(this, {
-            /*FURY_DECREASE_HP: 5,
-            FURY_INCREASE_ATTACK: 2,
-            ENRAGE_ATTACK_TRIES: 2,
-            ENRAGE_ATTACK_MULTIPLIER: 2,*/
             enrageAttackTries: 0
         });
     }
@@ -350,8 +327,6 @@ let Monster = (function () {
         data.enrageAttackTries = ENRAGE_ATTACK_TRIES;
         return true;
     };
-
-
 
     // overriding functions for inheritance
 
@@ -384,82 +359,12 @@ let Monster = (function () {
 
 
 
-
-
-// let creat = new Monster({ name: "King Krush", attack: 10, hitpoints: 60 });
-// let champ = new Champion({ name: "Rexxar", attack: 8, hitpoints: 80 });
-
-
-
-// console.log("MONSTER:\n", creat._toString());
-// console.log("CHAMPION:\n", champ._toString());
-
-
-// // champ.fight(creat);
-// // champ.fight(creat);
-// // champ.fight(creat);
-// // champ.fight(creat);
-// // champ.fight(creat);
-// // champ.fight(creat);
-// // champ.fight(creat);
-// // champ.fight(creat);
-
-// // creat.fight(champ);
-
-// champ.fight(creat);
-// champ.fight(creat);
-// champ.fight(creat);
-// champ.fight(creat);
-
-
-
-// console.log("MONSTER:\n", creat._toString());
-// console.log("CHAMPION:\n", champ._toString());
-
-
-// creat.fight(champ);
-// creat.fight(champ);
-// creat.fight(champ);
-// creat.fight(champ);
-// creat.fight(champ);
-// creat.fight(champ);
-// champ.heal();
-// champ.heal();
-// champ.heal();
-// champ.heal();
-// champ.heal();
-// champ.heal();
-// champ.heal();
-
-// creat.enrage();
-// creat.fight(champ);
-// creat.fight(champ);
-// creat.fight(champ);
-// creat.fury();
-// console.log("MONSTER:\n", creat._toString());
-// console.log("CHAMPION:\n", champ._toString());
-// creat.fight(champ);
-
-// creat.fury();
-// creat.fury();
-// creat.fury();
-// creat.fury();
-// creat.fury();
-// creat.fury();
-// creat.fury();
-// creat.fury();
-// creat.fury();
-
-
-
-
-
-// console.log("MONSTER:\n", creat._toString());
-// console.log("CHAMPION:\n", champ._toString());
-
-
+// TEST
 var hunter = new Champion({ name: "Rexxar", attack: 10, hitpoints: 60 });
 var beast = new Monster({ name: "King Krush", attack: 8, hitpoints: 80 });
+
+console.log("MONSTER:\n", creat._toString());
+console.log("CHAMPION:\n", champ._toString());
 
 hunter.fight(beast);
 console.log(beast.getHitpoints()); // -> 70
@@ -471,28 +376,22 @@ console.log(hunter.getHitpoints()); // -> 44
 hunter.fight(beast);
 hunter.fight(beast);
 hunter.fight(beast);
-// hunter.fight(beast);
 hunter.fight(beast);
-
 hunter.fight(beast);
 console.log(beast.isAlive()); // -> false
 console.log(hunter.getAttack()); // -> 11
 console.log(hunter.getHitpoints()); // -> 44
 hunter.heal();
 console.log(hunter.getHitpoints()); // -> 49
-// beast.fury();
+beast.fury();
 beast.fight(hunter);
 beast.fight(hunter);
 hunter.defence();
 beast.fight(hunter);
 beast.fight(hunter);
 beast.fight(hunter);
+beast.fury();
 beast.fight(hunter);
-beast.fight(hunter);
-// beast.fight(hunter);
-
-// beast.fury();
-
 
 console.log("MONSTER:\n", beast._toString());
 console.log("CHAMPION:\n", hunter._toString());
