@@ -8,7 +8,6 @@ rawArgs.forEach(val => {
     });
 });
 
-// write a function called `avg` here that calculates the average.
 function avg(...arr) {
     let sum = 0;
     let i = 0;

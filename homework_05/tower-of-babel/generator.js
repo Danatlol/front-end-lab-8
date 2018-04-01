@@ -3,7 +3,6 @@ const max = process.argv[2];
 function* FizzBuzz() {
 
     for (let i = 1; i <= max; ++i) {
-        // let ret = count;
         if ((i % 15) === 0) {
             yield "FizzBuzz";
         }
