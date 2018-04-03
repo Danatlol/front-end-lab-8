@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework 6</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <h1>Check your's location</h1>
+        <div class="input-form">
+            <div class="error-msg hide">Please enter valid ip address...</div>
+            <input class="" id="ip-field" type="text" placeholder="Enter IP Address ([0-255]. ... .[0-255])">
+            <input id="submit-btn" type="button" value="Track IP">
+        </div>
+
+        <div id="progress" class="hide">
+            <img id="progress-bar" src="img/lg.dual-gear-loading-icon.gif" alt="Loading...">
+        </div>
+
+        <div class="location-field hideSize" id="details-field">
+            <table id="details">
+                <caption>Location:</caption>
+                <tbody>
+                    <tr>
+                        <th>IP Address</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Country</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>City</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Latitude</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Longitude</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                </tbody>
+            </table>
+
+            <button id="verify-btn">Verify location</button>
+            <p class="verify-output"></p>
+        </div>
+
+    </div>
+
+
+
+    <script src="js/task1.js"></script>
+    <script src="js/task2.js"></script>
+</body>
+
+</html>

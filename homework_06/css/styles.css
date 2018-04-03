@@ -1,0 +1,91 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    font: 1rem sans-serif;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+input::placeholder{
+    font-size: 0.9rem;
+    color: cornflowerblue;
+    font-style: italic;
+}
+
+th, td{
+    padding: 6px;
+    width: 50%;
+    text-align: center;
+    color: goldenrod;
+    border: 1px solid black;
+    font-weight: 600;
+}
+
+caption{
+    text-align: center;
+    font-size: 1.6rem;
+    color: goldenrod;
+    margin-bottom: 1rem;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    margin: 1rem auto;
+}
+
+.wrapper{
+    margin-right: auto;
+    margin-left: auto;
+    width: 960px;
+    background: #eee;
+    padding: 2rem;
+    height: 100vh;}
+    .wrapper h1{
+        text-align: center;
+        color: cornflowerblue;
+        font-size: 3rem;    }
+    .wrapper input, #verify-btn{
+        font-size: 1.3rem;
+        box-sizing: content-box;
+        padding: 3px;
+        display: block;
+        width: 330px;
+        margin: 0.5rem auto;
+        color: cornflowerblue;
+    }
+
+.location-field{
+    padding: 2rem 4rem;
+    position: relative;
+    transform-origin: 50% 0;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.error-msg{
+    color: red;
+    font-style: italic;
+    position: fixed;
+    width: 100%;
+    padding-left: 370px;
+    margin-top: -1.1rem;
+}
+
+.verify-output{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.hide{
+    display: none;
+}
+
+.hideSize{
+    transform: scaleY(0);
+}
