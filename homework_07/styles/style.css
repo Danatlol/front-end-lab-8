@@ -1,0 +1,106 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    font: 1rem sans-serif;
+}
+
+h1{
+    text-align: center;
+    color: cornflowerblue;
+    margin: 1rem auto;
+}
+
+.wrapper{
+    margin: 0 auto;
+    padding: 3rem;
+    width: 960px;
+    background-color: bisque;
+    height: 100vh;
+}
+
+.game-field{
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: cornflowerblue;
+    border-radius: 1%;
+}
+
+.cells-container{
+    background-color: black;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+}
+
+.cell{
+    position: absolute;
+    background-color: cornflowerblue;
+    padding: 0;
+    margin: 0;
+}
+
+.new-game-btn{
+    display: block;
+    margin: 2rem auto;
+    font-size: 1.5rem;
+    color: cornflowerblue;
+    padding: 0.5rem 1.5rem;
+}
+
+.output-winner{
+    text-align: center;
+    color: cornflowerblue;
+    font-size: 1.5rem;
+}
+
+.mouse-handler{
+    position: relative;
+    background-color: transparent;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+}
+
+.token{
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 2px 2px 3px #000;
+}
+
+.token-black{
+    background: radial-gradient(circle at 35% 35%, #88f 1px, #22A 8px);
+}
+
+.token-white{
+    background: radial-gradient(circle at 35% 35%, #ff7 1px, #DB4 8px);
+}
+
+.token-win{
+    animation-name: winAnim;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(0.25, -0.5, 0.75, 1.5);
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    box-shadow: 0 0 20px red;
+}
+
+.token-appear{
+    animation-name: appearToken;
+    animation-duration: 0.25s;
+    animation-timing-function: cubic-bezier(0, 0, 0.75, 1.5);
+}
+
+@keyframes appearToken{
+    0%{transform: scale(0)}
+    100%{transform: scale(1)}
+}
+
+@keyframes winAnim{
+    0%{transform: scale(1)}
+    50%{transform: scale(1.2)}
+    100%{transform: scale(1)}
+}
