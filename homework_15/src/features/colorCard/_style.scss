@@ -1,0 +1,17 @@
+.color-card {
+    height: 200px;
+    width: 200px;
+    border-radius: 5%;
+    position: relative;
+    margin: 20px 20px;
+    user-select: none;
+
+    .color-card-btn {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        font-size: 1.3rem;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}

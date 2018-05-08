@@ -1,0 +1,13 @@
+.cards-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-items: space-evenly;
+    justify-content: center;
+    align-content: center;
+    align-items: space-evenly;
+
+    .empty-colors {
+        text-align: center;
+        font-size: 2rem;
+    }
+}

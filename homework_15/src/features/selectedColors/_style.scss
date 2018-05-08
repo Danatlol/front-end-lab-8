@@ -1,0 +1,25 @@
+.selected-container {
+    display: flex;
+}
+
+.color-empty-token {
+    width: 46px;
+    height: 46px;
+    border-radius: 15%;
+    user-select: none;
+    margin-left: -20px;
+    background: #FFF;
+    border: 3px solid rgb(39, 22, 148);
+}
+
+.first-token-border {
+    border: 3px solid rgb(219, 215, 244);
+}
+
+.second-token-border {
+    border: 3px solid rgb(167, 178, 221);
+}
+
+.third-token-border {
+    border: 3px solid rgb(133, 133, 204);
+}

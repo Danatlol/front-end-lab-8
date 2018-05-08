@@ -1,0 +1,33 @@
+// General
+@import './styles/fonts';
+@import './styles/colors';
+
+/* Import your components styles here */
+
+@import './features/filterColors/style';
+@import './features/amountColors/style';
+@import './features/availableColors/style';
+@import './features/colorCard/style';
+@import './features/selectedColors/style';
+@import './features/colorThumbnail/style';
+
+
+body {
+    background: silver;
+    margin: 0;
+}
+
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background: #FFF;
+    
+    .panel {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+        padding: 10px;
+    }
+}
+
