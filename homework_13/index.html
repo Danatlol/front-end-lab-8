@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework 13</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body ng-app="app" ng-controller="MainCtrl">
+    <div class="wrapper">
+        <div class="aside-flter-wnd">
+            <h3>Categories:</h3>
+            <ul class="categories-list">
+                <li ng-repeat="cat in availableCategories track by $index">{{cat}}</li>
+            </ul>
+            <input class="filter-input" type="text" ng-model="filterStr" ng-change="onFilterChangeHandler()" placeholder="filter...">
+        </div>
+        <h1 class="center-text header-title">Super-Blog</h1>
+        <post-dir ng-repeat="post in viewedPosts track by $index" post="post" save="extractCategories()"></post-dir>
+
+        <form name="postForm">
+            <div class="edit-extended-content" ng-if="isAddPost">
+                <label class="edit-label" for="comTitle">Title:</label>
+                <input class="edit-input-cell" id="comTitle" type="text" ng-model="editedValue.title" required>
+                <label class="edit-label" for="comCategories">Categories:</label>
+                <input class="edit-input-cell" id="comCategories" type="text" ng-model="editedValue.categories" required>
+                <label class="edit-label" for="comDescription">Description:</label>
+                <textarea class="edit-input-area" rows="10" id="comDescription" type="text" ng-model="editedValue.description"required></textarea>
+                <label class="edit-label" for="comPhotoUrl">Photo's url:</label>
+                <input class="edit-input-cell" id="comPhotoUrl" type="text" ng-model="editedValue.url">
+            </div>
+            <div class="common-action">
+                <button ng-if="!isAddPost" class="common-edit-btn" ng-click="onAddHandler()">Add</button>
+                <button ng-if="isAddPost" class="common-edit-btn" ng-click="onSavePostHandler()" ng-disabled="postForm.$invalid">Save post</button>
+                <button ng-if="isAddPost" class="common-edit-btn" ng-click="onAddCancelHandler()">Cancel</button>
+            </div>
+            <p class="center-text" ng-if="isAddPost && postForm.$invalid">Tip: all fields are required (exclude photo)</p>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="lib/angular.min.js"></script>
+    <script src="src/data.js"></script>
+    <script src="src/app.js"></script>
+
+</body>
+
+</html>
