@@ -1,0 +1,33 @@
+
+.center-text {
+    text-align: center;
+}
+
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    background: silver;
+}
+
+.head-action {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.add-btn {
+    margin: 10px 0 10px 40%;
+    padding: 4px 15px;
+    font-size: 1.5rem;
+}
+
+/* .track-cell {
+    text-align: center;
+    padding: 4px 0;
+} */
+/* 
+.add-form-wrapper {
+	display: grid;
+    grid-template-columns: 1fr 3fr 3fr 3fr 3fr;
+    align-content: center;
+} */

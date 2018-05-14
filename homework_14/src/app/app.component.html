@@ -1,0 +1,8 @@
+<div class="wrapper">
+  <h1 class="center-text">Homework 14</h1>
+  <div class="head-action">
+    <span>FE LAB 8</span>
+    <button class="add-btn" type="button" (click)="onAddClick()">Add</button>
+  </div>
+  <app-lesson *ngFor="let lesson of less$ | async" [data]="lesson"></app-lesson>
+</div>

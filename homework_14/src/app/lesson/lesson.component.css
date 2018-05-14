@@ -1,0 +1,12 @@
+
+.track-wrapper {
+	display: grid;
+    grid-template-columns: 1fr 3fr 3fr 3fr 3fr;
+    align-content: center;
+    border-bottom: 1px solid white;
+}
+
+.track-cell {
+    text-align: center;
+    padding: 4px 0;
+}

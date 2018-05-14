@@ -1,0 +1,12 @@
+<div class="track-wrapper">
+  <div class="track-cell"><span>{{data.id}}</span></div>
+  <div class="track-cell"><span *ngIf="!isEdit">{{data.topic}}</span><input *ngIf="isEdit" type="text" [(ngModel)]="tempValue.topic"></div>
+  <div class="track-cell"><span *ngIf="!isEdit">{{data.date}}</span><input *ngIf="isEdit" type="text" [(ngModel)]="tempValue.date"></div>
+  <div class="track-cell"><span *ngIf="!isEdit">{{data.lecture}}</span><input *ngIf="isEdit" type="text" [(ngModel)]="tempValue.lecture"></div>
+  <div class="track-cell">
+    <button *ngIf="!isEdit" type="button" (click)="onEdit()">Edit</button>
+    <button *ngIf="!isEdit" type="button" (click)="onDelete()">Delete</button>
+    <button *ngIf="isEdit" type="button" (click)="onSave()">Save</button>
+    <button *ngIf="isEdit" type="button" (click)="onCancel()">Cancel</button>
+  </div>
+</div>
