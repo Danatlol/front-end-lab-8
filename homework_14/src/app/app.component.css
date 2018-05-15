@@ -8,6 +8,7 @@
     margin: 0 auto;
     padding: 20px 30px;
     background: silver;
+    height: 100vh;
 }
 
 .head-action {
@@ -21,13 +22,15 @@
     font-size: 1.5rem;
 }
 
-/* .track-cell {
+.track-header-cell {
     text-align: center;
     padding: 4px 0;
-} */
-/* 
-.add-form-wrapper {
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.add-form-header-wrapper {
 	display: grid;
     grid-template-columns: 1fr 3fr 3fr 3fr 3fr;
     align-content: center;
-} */
+}
