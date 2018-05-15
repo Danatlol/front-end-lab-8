@@ -4,5 +4,12 @@
     <span>FE LAB 8</span>
     <button class="add-btn" type="button" (click)="onAddClick()">Add</button>
   </div>
+  <div class="add-form-header-wrapper">
+    <div class="track-header-cell">Id</div>
+    <div class="track-header-cell">Topic</div>
+    <div class="track-header-cell">Date</div>
+    <div class="track-header-cell">Lesson</div>
+    <div class="track-header-cell">Actions</div>
+  </div>
   <app-lesson *ngFor="let lesson of less$ | async" [data]="lesson"></app-lesson>
 </div>
